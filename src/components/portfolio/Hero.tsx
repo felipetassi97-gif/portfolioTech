@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { PerspectiveGrid } from "./PerspectiveGrid";
 import { Text } from "./DecryptText";
 import { useLanguage } from "@/context/LanguageContext";
+import { MatrixRain } from "./MatrixRain";
 
 export function Hero() {
   const [showHint, setShowHint] = useState(true);
@@ -17,6 +18,7 @@ export function Hero() {
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden border-b border-[var(--border-default)]">
       <PerspectiveGrid />
+      <MatrixRain />
 
       {/* radial glow */}
       <div
