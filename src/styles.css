@@ -117,8 +117,13 @@
     );
   }
 
+  /* Universal: never show the native cursor — custom cursor handles all states */
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+
   @media (pointer: coarse) {
-    body { cursor: auto; }
+    *, *::before, *::after { cursor: auto !important; }
   }
 
   ::selection {

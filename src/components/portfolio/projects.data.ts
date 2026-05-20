@@ -26,7 +26,7 @@ export const projects: Project[] = [
     number: "01",
     name: "PACTO",
     status: "wip",
-    statusLabelPt: "Em dev",
+    statusLabelPt: "Em progresso",
     statusLabelEn: "In dev",
     taglinePt: "// Plataforma de desafios 1v1 & constância",
     taglineEn: "// 1v1 habits challenge & consistency platform",
