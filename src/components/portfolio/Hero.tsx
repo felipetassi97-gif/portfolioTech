@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { PerspectiveGrid } from "./PerspectiveGrid";
+import { Text } from "./DecryptText";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
   const [showHint, setShowHint] = useState(true);
@@ -36,18 +38,21 @@ export function Hero() {
             className="display-tight clip-reveal text-[var(--text)]"
             style={{ fontSize: "clamp(2.3rem, 9vw, 8rem)" }}
           >
-            Sistemas que
+            <Text pt="Sistemas que" en="Systems that" />
             <br />
-            <span className="text-teal">funcionam.</span>
+            <span className="text-teal">
+              <Text pt="funcionam." en="work." />
+            </span>
           </h1>
 
           <p
             className="max-w-[480px] text-[1.02rem] leading-relaxed text-muted-2"
             style={{ animation: "fadeUp 700ms cubic-bezier(0.16,1,0.3,1) 600ms both" }}
           >
-            Construo plataformas completas — da arquitetura de banco de dados
-            até a interface final. Foco em performance, segurança e lógica de
-            negócio real.
+            <Text
+              pt="Construo plataformas completas — da arquitetura de banco de dados até a interface final. Foco em performance, segurança e lógica de negócio real."
+              en="I build complete platforms — from database architecture to the final interface. Focused on performance, security, and real business logic."
+            />
           </p>
 
           <div
@@ -58,14 +63,14 @@ export function Hero() {
               href="#projetos"
               className="group inline-flex items-center justify-center gap-2 bg-[var(--accent-teal)] px-6 py-3 font-mono text-[0.72rem] uppercase tracking-[0.2em] text-[var(--bg)] transition-transform duration-200 hover:-translate-y-0.5"
             >
-              Ver projetos
+              <Text pt="Ver projetos" en="View projects" />
               <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
             </a>
             <a
               href="#contato"
               className="inline-flex items-center justify-center gap-2 border border-[var(--accent-teal)]/60 px-6 py-3 font-mono text-[0.72rem] uppercase tracking-[0.2em] text-teal transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--accent-teal)]"
             >
-              Falar comigo
+              <Text pt="Falar comigo" en="Get in touch" />
             </a>
           </div>
         </div>
@@ -75,9 +80,9 @@ export function Hero() {
           className="hidden flex-col gap-8 text-right md:flex"
           style={{ animation: "fadeUp 700ms cubic-bezier(0.16,1,0.3,1) 1000ms both" }}
         >
-          <Stat value="5+" label="sistemas entregues" />
-          <Stat value="∞" label="problemas resolvidos" />
-          <Stat value="01" label="dev focado" />
+          <Stat value="5+" label={useLanguage().language === "pt" ? "sistemas entregues" : "systems delivered"} />
+          <Stat value="∞" label={useLanguage().language === "pt" ? "problemas resolvidos" : "problems solved"} />
+          <Stat value="01" label={useLanguage().language === "pt" ? "dev focado" : "dedicated dev"} />
         </div>
       </div>
 

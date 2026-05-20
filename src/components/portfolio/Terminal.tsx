@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Text } from "./DecryptText";
 
 type Line = { text: string; type: "commit" | "prompt" };
 
@@ -78,16 +79,16 @@ export function Terminal() {
       </div>
 
       <pre className="overflow-x-auto whitespace-pre p-5 font-mono text-[0.62rem] sm:text-[0.72rem] md:text-[0.78rem] leading-relaxed text-[var(--text)]">
-{`> `}<span className="text-muted-1">// dev profile</span>{`
+{`> `}<span className="text-muted-1">// <Text pt="perfil dev" en="dev profile" /></span>{`
 `}<span className="text-[var(--text)]">{`{`}</span>{`
-  `}<span className="text-amber">"nome"</span>{`: `}<span className="text-teal">{`"Felipe"`}</span>{`,
-  `}<span className="text-amber">"foco"</span>{`: `}<span className="text-teal">{`"Full-Stack & Sistemas"`}</span>{`,
-  `}<span className="text-amber">"abordagem"</span>{`: `}<span className="text-teal">{`"negócio primeiro"`}</span>{`,
-  `}<span className="text-amber">"projetos"</span>{`: `}<span className="text-blue">5</span>{`,
-  `}<span className="text-amber">"status"</span>{`: `}<span className="text-teal">{`"disponível para projetos"`}</span>{`
+  `}<span className="text-amber">"<Text pt="nome" en="name" />"</span>{`: `}<span className="text-teal">{`"Felipe"`}</span>{`,
+  `}<span className="text-amber">"<Text pt="foco" en="focus" />"</span>{`: `}<span className="text-teal">"<Text pt="Full-Stack & Sistemas" en="Full-Stack & Systems" />"</span>{`,
+  `}<span className="text-amber">"<Text pt="abordagem" en="approach" />"</span>{`: `}<span className="text-teal">"<Text pt="negócio primeiro" en="business first" />"</span>{`,
+  `}<span className="text-amber">"<Text pt="projetos" en="projects" />"</span>{`: `}<span className="text-blue">5</span>{`,
+  `}<span className="text-amber">"status"</span>{`: `}<span className="text-teal">"<Text pt="disponível para projetos" en="available for projects" />"</span>{`
 `}<span className="text-[var(--text)]">{`}`}</span>{`
 
-`}<span className="text-teal">$</span>{` ls -la ./projetos/
+`}<span className="text-teal">$</span>{` ls -la ./<Text pt="projetos" en="projects" />/
 `}
         {PROJECTS.map((c, i) => {
           const typedText = typed[i] ?? "";

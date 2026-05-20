@@ -1,6 +1,8 @@
 import { useState } from "react";
 import type { Project } from "./projects.data";
 import { Reveal } from "./Reveal";
+import { useLanguage } from "@/context/LanguageContext";
+import { Text } from "./DecryptText";
 
 type Props = {
   project: Project;
@@ -10,6 +12,7 @@ type Props = {
 
 export function ProjectCard({ project, reversed = false, delay = 0 }: Props) {
   const [showVideo, setShowVideo] = useState(false);
+  const { language } = useLanguage();
 
   const info = (
     <div className="flex flex-col gap-5 p-8 md:p-10">
@@ -17,17 +20,22 @@ export function ProjectCard({ project, reversed = false, delay = 0 }: Props) {
         <span className="font-mono text-[0.7rem] tracking-widest text-teal/70">
           // {project.number}
         </span>
-        <StatusBadge status={project.status} label={project.statusLabel} />
+        <StatusBadge
+          status={project.status}
+          label={language === "pt" ? project.statusLabelPt : project.statusLabelEn}
+        />
       </div>
 
       <h3 className="display-tight text-[1.9rem] text-[var(--text)] md:text-[2.1rem]">
         {project.name}
       </h3>
 
-      <p className="font-mono text-[0.78rem] text-teal">{project.tagline}</p>
+      <p className="font-mono text-[0.78rem] text-teal">
+        <Text pt={project.taglinePt} en={project.taglineEn} />
+      </p>
 
       <p className="text-[0.92rem] leading-relaxed text-muted-2">
-        {project.description}
+        <Text pt={project.descriptionPt} en={project.descriptionEn} />
       </p>
 
       <div className="mt-2 flex flex-wrap gap-2">
@@ -47,7 +55,11 @@ export function ProjectCard({ project, reversed = false, delay = 0 }: Props) {
           className="flex items-center gap-2 border border-[var(--border-accent)] bg-transparent px-4 py-2 font-mono text-[0.7rem] uppercase tracking-widest text-teal transition-all hover:bg-[rgba(0,230,200,0.05)]"
         >
           <span className={`h-1.5 w-1.5 rounded-full bg-[var(--accent-teal)] ${showVideo ? "" : "pulse-dot"}`} />
-          {showVideo ? "Fechar Preview" : "Ver Preview"}
+          {showVideo ? (
+            <Text pt="Fechar Preview" en="Close Preview" />
+          ) : (
+            <Text pt="Ver Preview" en="View Preview" />
+          )}
         </button>
       </div>
 
@@ -55,10 +67,10 @@ export function ProjectCard({ project, reversed = false, delay = 0 }: Props) {
         <div className="mt-4 overflow-hidden rounded border border-[var(--border-default)] bg-[#050608]">
           <div className="aspect-video w-full flex flex-col items-center justify-center gap-2 p-6 text-center">
             <span className="font-mono text-[0.75rem] uppercase tracking-widest text-muted-1">
-              // Vídeo de Preview
+              <Text pt="// Vídeo de Preview" en="// Preview Video" />
             </span>
             <span className="font-mono text-[0.65rem] text-muted-2">
-              (O vídeo final será inserido aqui)
+              <Text pt="(O vídeo final será inserido aqui)" en="(The final video will be inserted here)" />
             </span>
             <video
               className="hidden w-full"
@@ -78,8 +90,8 @@ export function ProjectCard({ project, reversed = false, delay = 0 }: Props) {
         // features
       </span>
       <ul className="flex flex-col gap-5">
-        {project.features.map((f) => (
-          <li key={f.title} className="flex gap-4">
+        {project.features.map((f, idx) => (
+          <li key={idx} className="flex gap-4">
             <span
               aria-hidden
               className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center border border-[rgba(0,230,200,0.2)] bg-[rgba(0,230,200,0.1)]"
@@ -89,10 +101,10 @@ export function ProjectCard({ project, reversed = false, delay = 0 }: Props) {
             </span>
             <div className="flex flex-col gap-1.5">
               <h4 className="text-[0.88rem] font-semibold text-[var(--text)]">
-                {f.title}
+                <Text pt={f.titlePt} en={f.titleEn} />
               </h4>
               <p className="font-mono text-[0.7rem] leading-relaxed text-muted-1">
-                {f.detail}
+                <Text pt={f.detailPt} en={f.detailEn} />
               </p>
             </div>
           </li>
