@@ -113,7 +113,7 @@ export const projects: Project[] = [
     descriptionPt:
       "Suite de sistemas para gestão, orçamento e exibição de portfólio técnico de fachadas arquitetônicas e revestimentos em ACM para a imobiliária Verthien.",
     descriptionEn:
-      "Systems suite for management, budgeting, and exhibition of architectural facades and ACM coatings technical portfolio for Verthien construction.",
+      "Systems suite for management, budgeting, and exhibition of architectural facades and ACM coatings technical portfolio for Verthien Real Estate.",
     tags: ["Web App", "Cálculo ACM", "Orçamentos dinâmicos", "Catálogo técnico"],
     features: [
       {
