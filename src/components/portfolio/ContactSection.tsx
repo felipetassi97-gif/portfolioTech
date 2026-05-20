@@ -24,7 +24,7 @@ export function ContactSection() {
         </Reveal>
 
         <Reveal delay={80}>
-          <h2 className="display-tight text-[var(--text)]" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}>
+          <h2 className="display-tight text-[var(--text)]" style={{ fontSize: "clamp(1.9rem, 6vw, 5rem)" }}>
             Vamos construir
             <br />
             <span className="text-teal inline-block pb-2 leading-normal">algo juntos?</span>

@@ -34,7 +34,7 @@ export function Hero() {
 
           <h1
             className="display-tight clip-reveal text-[var(--text)]"
-            style={{ fontSize: "clamp(3.25rem, 9vw, 8rem)" }}
+            style={{ fontSize: "clamp(2.3rem, 9vw, 8rem)" }}
           >
             Sistemas que
             <br />

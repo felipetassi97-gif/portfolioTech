@@ -77,7 +77,7 @@ export function Terminal() {
         <span className="ml-3 font-mono text-[0.65rem] text-muted-1">~/felipe — zsh</span>
       </div>
 
-      <pre className="overflow-x-auto p-5 font-mono text-[0.78rem] leading-relaxed text-[var(--text)]">
+      <pre className="overflow-x-auto whitespace-pre p-5 font-mono text-[0.62rem] sm:text-[0.72rem] md:text-[0.78rem] leading-relaxed text-[var(--text)]">
 {`> `}<span className="text-muted-1">// dev profile</span>{`
 `}<span className="text-[var(--text)]">{`{`}</span>{`
   `}<span className="text-amber">"nome"</span>{`: `}<span className="text-teal">{`"Felipe"`}</span>{`,
