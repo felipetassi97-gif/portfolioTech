@@ -104,16 +104,16 @@ export const projects: Project[] = [
   },
   {
     number: "03",
-    name: "SISTEMAS VERTHIEN",
+    name: "SISTEMAS VERTIEN",
     status: "done",
     statusLabelPt: "Entregue",
     statusLabelEn: "Delivered",
     taglinePt: "// Engenharia civil & fachadas de alto padrão",
     taglineEn: "// Civil engineering & high-end facades",
     descriptionPt:
-      "Suite de sistemas para gestão, orçamento e exibição de portfólio técnico de fachadas arquitetônicas e revestimentos em ACM para a imobiliária Verthien.",
+      "Suite de sistemas para gestão, orçamento e exibição de portfólio técnico de fachadas arquitetônicas e revestimentos em ACM para a imobiliária Vertien.",
     descriptionEn:
-      "Systems suite for management, budgeting, and exhibition of architectural facades and ACM coatings technical portfolio for Verthien Real Estate.",
+      "Systems suite for management, budgeting, and exhibition of architectural facades and ACM coatings technical portfolio for Vertien Real Estate.",
     tags: ["Web App", "Cálculo ACM", "Orçamentos dinâmicos", "Catálogo técnico"],
     features: [
       {
